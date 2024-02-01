@@ -343,10 +343,10 @@ SDL_bool Android_HasScreenKeyboardSupport(_THIS)
     return SDL_TRUE;
 }
 
-void Android_ShowScreenKeyboard(_THIS, SDL_Window *window)
+void Android_ShowScreenKeyboard(_THIS, SDL_Window *window, SDL_bool password)
 {
     SDL_VideoData *videodata = _this->driverdata;
-    Android_JNI_ShowScreenKeyboard(&videodata->textRect);
+    Android_JNI_ShowScreenKeyboard(&videodata->textRect, password);
     SDL_screen_keyboard_shown = SDL_TRUE;
 }
 
@@ -359,7 +359,7 @@ void Android_HideScreenKeyboard(_THIS, SDL_Window *window)
 void Android_RestoreScreenKeyboardOnResume(_THIS, SDL_Window *window)
 {
     if (SDL_screen_keyboard_shown) {
-        Android_ShowScreenKeyboard(_this, window);
+        Android_ShowScreenKeyboard(_this, window, SDL_FALSE);
     }
 }
 

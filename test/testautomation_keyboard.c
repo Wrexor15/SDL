@@ -340,17 +340,17 @@ int keyboard_getSetModState(void *arg)
 int keyboard_startStopTextInput(void *arg)
 {
     /* Start-Stop */
-    SDL_StartTextInput();
+    SDL_StartTextInput(SDL_FALSE);
     SDLTest_AssertPass("Call to SDL_StartTextInput()");
     SDL_StopTextInput();
     SDLTest_AssertPass("Call to SDL_StopTextInput()");
 
     /* Stop-Start */
-    SDL_StartTextInput();
+    SDL_StartTextInput(SDL_FALSE);
     SDLTest_AssertPass("Call to SDL_StartTextInput()");
 
     /* Start-Start */
-    SDL_StartTextInput();
+    SDL_StartTextInput(SDL_FALSE);
     SDLTest_AssertPass("Call to SDL_StartTextInput()");
 
     /* Stop-Stop */

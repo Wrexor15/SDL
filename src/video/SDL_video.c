@@ -593,7 +593,7 @@ int SDL_VideoInit(const char *driver_name)
         if (!hint) {
             SDL_SetHint(SDL_HINT_ENABLE_SCREEN_KEYBOARD, "0");
         }
-        SDL_StartTextInput();
+        SDL_StartTextInput(SDL_FALSE);
         if (!hint) {
             SDL_SetHint(SDL_HINT_ENABLE_SCREEN_KEYBOARD, NULL);
         }
@@ -4363,7 +4363,7 @@ SDL_bool SDL_GetWindowWMInfo(SDL_Window * window, struct SDL_SysWMinfo *info)
     return (_this->GetWindowWMInfo(_this, window, info));
 }
 
-void SDL_StartTextInput(void)
+void SDL_StartTextInput(SDL_bool password)
 {
     SDL_Window *window;
 
@@ -4375,13 +4375,13 @@ void SDL_StartTextInput(void)
     if (SDL_GetHintBoolean(SDL_HINT_ENABLE_SCREEN_KEYBOARD, SDL_TRUE)) {
         window = SDL_GetFocusWindow();
         if (window && _this && _this->ShowScreenKeyboard) {
-            _this->ShowScreenKeyboard(_this, window);
+            _this->ShowScreenKeyboard(_this, window, password);
         }
     }
 
     /* Finally start the text input system */
     if (_this && _this->StartTextInput) {
-        _this->StartTextInput(_this);
+        _this->StartTextInput(_this, password);
     }
 }
 

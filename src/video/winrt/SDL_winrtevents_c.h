@@ -70,7 +70,7 @@ extern void WINRT_ProcessCharacterReceivedEvent(Windows::UI::Core::CharacterRece
 #if NTDDI_VERSION >= NTDDI_WIN10
 extern void WINTRT_InitialiseInputPaneEvents(_THIS);
 extern SDL_bool WINRT_HasScreenKeyboardSupport(_THIS);
-extern void WINRT_ShowScreenKeyboard(_THIS, SDL_Window *window);
+extern void WINRT_ShowScreenKeyboard(_THIS, SDL_Window *window, SDL_bool);
 extern void WINRT_HideScreenKeyboard(_THIS, SDL_Window *window);
 extern SDL_bool WINRT_IsScreenKeyboardShown(_THIS, SDL_Window *window);
 #endif // NTDDI_VERSION >= ...

@@ -428,7 +428,7 @@ SDL_bool WINRT_HasScreenKeyboardSupport(_THIS)
     return SDL_TRUE;
 }
 
-void WINRT_ShowScreenKeyboard(_THIS, SDL_Window *window)
+void WINRT_ShowScreenKeyboard(_THIS, SDL_Window *window, SDL_bool)
 {
     using namespace Windows::UI::ViewManagement;
     InputPane ^ inputPane = InputPane::GetForCurrentView();

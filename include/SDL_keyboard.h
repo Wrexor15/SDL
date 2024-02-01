@@ -258,12 +258,14 @@ extern DECLSPEC SDL_Keycode SDLCALL SDL_GetKeyFromName(const char *name);
  * video subsystem initialization which will cause SDL_TextInputEvent and
  * SDL_TextEditingEvent to begin emitting.
  *
+ * \param password SDL_TRUE sets password input type to conceal user's input
+ *
  * \since This function is available since SDL 2.0.0.
  *
  * \sa SDL_SetTextInputRect
  * \sa SDL_StopTextInput
  */
-extern DECLSPEC void SDLCALL SDL_StartTextInput(void);
+extern DECLSPEC void SDLCALL SDL_StartTextInput(SDL_bool password);
 
 /**
  * Check whether or not Unicode text input events are enabled.

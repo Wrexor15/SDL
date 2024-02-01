@@ -281,7 +281,7 @@ static void *setup_temporal_gu(void *list)
 {
     // Using GU_PSM_8888 for the framebuffer
 	int bpp = 4;
-	
+
 	void *doublebuffer = vramalloc(PSP_FRAME_BUFFER_SIZE * bpp * 2);
     void *backbuffer = doublebuffer;
     void *frontbuffer = ((uint8_t *)doublebuffer) + PSP_FRAME_BUFFER_SIZE * bpp;
@@ -303,7 +303,7 @@ static void *setup_temporal_gu(void *list)
 
     sceGuFinish();
     sceGuSync(0,0);
-    
+
     sceDisplayWaitVblankStart();
     sceGuDisplay(GU_TRUE);
 
@@ -553,7 +553,7 @@ SDL_bool PSP_HasScreenKeyboardSupport(SDL_VideoDevice *_this)
     return SDL_TRUE;
 }
 
-void PSP_ShowScreenKeyboard(SDL_VideoDevice *_this, SDL_Window *window)
+void PSP_ShowScreenKeyboard(SDL_VideoDevice *_this, SDL_Window *window, SDL_bool)
 {
     char list[0x20000] __attribute__((aligned(64)));  // Needed for sceGuStart to work
     int i;
