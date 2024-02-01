@@ -436,7 +436,7 @@ static void X11_ResetXIM(_THIS)
 #endif
 }
 
-void X11_StartTextInput(_THIS)
+void X11_StartTextInput(_THIS, SDL_bool _)
 {
     X11_ResetXIM(_this);
 }
@@ -467,7 +467,7 @@ SDL_bool X11_HasScreenKeyboardSupport(_THIS)
     return videodata->is_steam_deck;
 }
 
-void X11_ShowScreenKeyboard(_THIS, SDL_Window *window)
+void X11_ShowScreenKeyboard(_THIS, SDL_Window *window, SDL_bool)
 {
     SDL_VideoData *videodata = (SDL_VideoData *)_this->driverdata;
 

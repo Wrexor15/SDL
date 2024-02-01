@@ -195,7 +195,7 @@ void WIN_ResetDeadKeys()
     }
 }
 
-void WIN_StartTextInput(_THIS)
+void WIN_StartTextInput(_THIS, SDL_bool _)
 {
 #ifndef SDL_DISABLE_WINDOWS_IME
     SDL_Window *window;

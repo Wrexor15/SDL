@@ -286,7 +286,7 @@ SDL_bool PSP_HasScreenKeyboardSupport(_THIS)
 {
     return SDL_FALSE;
 }
-void PSP_ShowScreenKeyboard(_THIS, SDL_Window *window)
+void PSP_ShowScreenKeyboard(_THIS, SDL_Window *window, SDL_bool)
 {
 }
 void PSP_HideScreenKeyboard(_THIS, SDL_Window *window)

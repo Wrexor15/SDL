@@ -319,7 +319,7 @@ struct SDL_VideoDevice
     void (*SuspendScreenSaver)(_THIS);
 
     /* Text input */
-    void (*StartTextInput)(_THIS);
+    void (*StartTextInput)(_THIS, SDL_bool password);
     void (*StopTextInput)(_THIS);
     void (*SetTextInputRect)(_THIS, const SDL_Rect *rect);
     void (*ClearComposition)(_THIS);
@@ -327,7 +327,7 @@ struct SDL_VideoDevice
 
     /* Screen keyboard */
     SDL_bool (*HasScreenKeyboardSupport)(_THIS);
-    void (*ShowScreenKeyboard)(_THIS, SDL_Window *window);
+    void (*ShowScreenKeyboard)(_THIS, SDL_Window *window, SDL_bool password);
     void (*HideScreenKeyboard)(_THIS, SDL_Window *window);
     SDL_bool (*IsScreenKeyboardShown)(_THIS, SDL_Window *window);
 

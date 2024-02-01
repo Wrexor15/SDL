@@ -51,7 +51,7 @@ void Wayland_QuitKeyboard(_THIS)
 #endif
 }
 
-void Wayland_StartTextInput(_THIS)
+void Wayland_StartTextInput(_THIS, SDL_bool _)
 {
     SDL_VideoData *driverdata = _this->driverdata;
 

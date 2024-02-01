@@ -1251,11 +1251,14 @@ public class SDLActivity extends Activity implements View.OnSystemUiVisibilityCh
 
         public int x, y, w, h;
 
-        public ShowTextInputTask(int x, int y, int w, int h) {
+        private boolean isPassword;
+
+        public ShowTextInputTask(int x, int y, int w, int h, boolean isPassword) {
             this.x = x;
             this.y = y;
             this.w = w;
             this.h = h;
+            this.isPassword = isPassword;
 
             /* Minimum size of 1 pixel, so it takes focus. */
             if (this.w <= 0) {
@@ -1282,6 +1285,7 @@ public class SDLActivity extends Activity implements View.OnSystemUiVisibilityCh
 
             mTextEdit.setVisibility(View.VISIBLE);
             mTextEdit.requestFocus();
+            mTextEdit.setIsPassword(isPassword);
 
             InputMethodManager imm = (InputMethodManager) SDL.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.showSoftInput(mTextEdit, 0);
@@ -1293,9 +1297,9 @@ public class SDLActivity extends Activity implements View.OnSystemUiVisibilityCh
     /**
      * This method is called by SDL using JNI.
      */
-    public static boolean showTextInput(int x, int y, int w, int h) {
+    public static boolean showTextInput(int x, int y, int w, int h, boolean isPassword) {
         // Transfer the task to the main thread as a Runnable
-        return mSingleton.commandHandler.post(new ShowTextInputTask(x, y, w, h));
+        return mSingleton.commandHandler.post(new ShowTextInputTask(x, y, w, h, isPassword));
     }
 
     public static boolean isTextInputEvent(KeyEvent event) {
@@ -1898,6 +1902,7 @@ class SDLMain implements Runnable {
  * pan&scan region
  */
 class DummyEdit extends View implements View.OnKeyListener {
+    private boolean isPassword;
     InputConnection ic;
 
     public DummyEdit(Context context) {
@@ -1940,10 +1945,17 @@ class DummyEdit extends View implements View.OnKeyListener {
 
         outAttrs.inputType = InputType.TYPE_CLASS_TEXT |
                              InputType.TYPE_TEXT_FLAG_MULTI_LINE;
+        if (isPassword) {
+            outAttrs.inputType |= InputType.TYPE_TEXT_VARIATION_PASSWORD;
+        }
         outAttrs.imeOptions = EditorInfo.IME_FLAG_NO_EXTRACT_UI |
                               EditorInfo.IME_FLAG_NO_FULLSCREEN /* API 11 */;
 
         return ic;
+    }
+
+    public void setIsPassword(boolean isPassword) {
+        this.isPassword = isPassword;
     }
 }
 

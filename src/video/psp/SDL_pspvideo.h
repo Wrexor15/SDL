@@ -85,7 +85,7 @@ void PSP_GL_DeleteContext(_THIS, SDL_GLContext context);
 
 /* PSP on screen keyboard */
 SDL_bool PSP_HasScreenKeyboardSupport(_THIS);
-void PSP_ShowScreenKeyboard(_THIS, SDL_Window *window);
+void PSP_ShowScreenKeyboard(_THIS, SDL_Window *window, SDL_bool);
 void PSP_HideScreenKeyboard(_THIS, SDL_Window *window);
 SDL_bool PSP_IsScreenKeyboardShown(_THIS, SDL_Window *window);
 

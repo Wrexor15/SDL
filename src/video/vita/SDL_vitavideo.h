@@ -108,7 +108,7 @@ void VITA_GLES_DeleteContext(_THIS, SDL_GLContext context);
 
 /* VITA on screen keyboard */
 SDL_bool VITA_HasScreenKeyboardSupport(_THIS);
-void VITA_ShowScreenKeyboard(_THIS, SDL_Window *window);
+void VITA_ShowScreenKeyboard(_THIS, SDL_Window *window, SDL_bool);
 void VITA_HideScreenKeyboard(_THIS, SDL_Window *window);
 SDL_bool VITA_IsScreenKeyboardShown(_THIS, SDL_Window *window);
 
