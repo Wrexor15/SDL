@@ -457,7 +457,7 @@ SDL_HideHomeIndicatorHintChanged(void *userdata, const char *name, const char *o
 #endif
 
     if (shouldStartTextInput) {
-        SDL_StartTextInput();
+        SDL_StartTextInput(SDL_FALSE);
     }
 }
 

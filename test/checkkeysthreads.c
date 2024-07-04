@@ -196,7 +196,7 @@ void loop(void)
                     SDL_StopTextInput();
                 } else {
                     SDL_Log("Starting text input\n");
-                    SDL_StartTextInput();
+                    SDL_StartTextInput(SDL_FALSE);
                 }
             }
             break;
@@ -271,7 +271,7 @@ int main(int argc, char *argv[])
     SDL_GL_CreateContext(window);
 #endif
 
-    SDL_StartTextInput();
+    SDL_StartTextInput(SDL_FALSE);
 
     /* Print initial modifier state */
     SDL_PumpEvents();

@@ -467,7 +467,7 @@ SDL_bool X11_HasScreenKeyboardSupport(_THIS)
     return videodata->is_steam_deck;
 }
 
-void X11_ShowScreenKeyboard(_THIS, SDL_Window *window, SDL_bool)
+void X11_ShowScreenKeyboard(_THIS, SDL_Window *window, SDL_bool _)
 {
     SDL_VideoData *videodata = (SDL_VideoData *)_this->driverdata;
 
