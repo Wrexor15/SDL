@@ -441,7 +441,7 @@ void InitInput(void)
     markedRect = textRect;
     markedText[0] = 0;
 
-    SDL_StartTextInput();
+    SDL_StartTextInput(SDL_FALSE);
 }
 
 void CleanupVideo(void)
@@ -509,7 +509,7 @@ void _Redraw(int rendererID)
         SDL_StopTextInput();
         return;
     } else {
-        SDL_StartTextInput();
+        SDL_StartTextInput(SDL_FALSE);
     }
 
     cursorRect = drawnTextRect;

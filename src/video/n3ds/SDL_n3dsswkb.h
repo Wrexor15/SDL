@@ -30,7 +30,7 @@ void N3DS_SwkbQuit();
 
 SDL_bool N3DS_HasScreenKeyboardSupport(_THIS);
 
-void N3DS_StartTextInput(_THIS);
+void N3DS_StartTextInput(_THIS, SDL_bool);
 void N3DS_StopTextInput(_THIS);
 
 #endif /* SDL_n3dskeyboard_h_ */
