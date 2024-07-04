@@ -467,7 +467,7 @@ void VITA_ImeEventHandler(void *arg, const SceImeEventData *e)
 }
 #endif
 
-void VITA_ShowScreenKeyboard(_THIS, SDL_Window *window, SDL_bool)
+void VITA_ShowScreenKeyboard(_THIS, SDL_Window *window, SDL_bool _)
 {
     SDL_VideoData *videodata = (SDL_VideoData *)_this->driverdata;
     SceInt32 res;
