@@ -306,6 +306,8 @@ SDL_HideHomeIndicatorHintChanged(void *userdata, const char *name, const char *o
     textField.keyboardType = UIKeyboardTypeDefault;
     textField.returnKeyType = UIReturnKeyDefault;
     textField.secureTextEntry = NO;
+    textField.smartDashesType = UITextSmartDashesTypeNo;
+    textField.smartQuotesType = UITextSmartQuotesTypeNo;
 
     textField.hidden = YES;
     keyboardVisible = NO;
