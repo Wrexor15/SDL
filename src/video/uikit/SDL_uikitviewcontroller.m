@@ -611,7 +611,7 @@ SDL_bool UIKit_HasScreenKeyboardSupport(_THIS)
     return SDL_TRUE;
 }
 
-void UIKit_ShowScreenKeyboard(_THIS, SDL_Window *window, SDL_bool)
+void UIKit_ShowScreenKeyboard(_THIS, SDL_Window *window, SDL_bool password)
 {
     @autoreleasepool {
         SDL_uikitviewcontroller *vc = GetWindowViewController(window);
